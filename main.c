@@ -13,8 +13,6 @@
  #ifdef _WIN32
  #include<windows.h>
  #endif
-
-
  //User define header file
  #include"./header_Files/impFNS.h"
 
@@ -24,6 +22,7 @@ void intro(void);
 
  int main()
  {
+     system("./python/date.py");
      intro();
 
  }

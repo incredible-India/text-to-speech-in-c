@@ -1,0 +1,6 @@
+1 : 'python' must be installed in your pc and the internet connection must be on.
+2 :  For checking the python installed or not in your pc open terminal/cmd/powershell
+3 :  type 'python' and press enter
+4 :  if you got no error message then python is installed in your pc
+5 :  if you got error message like " python is not recognized as an internal or external command" it means python is not installed in your pc
+6 :  To install the python go to this url www.python.org 

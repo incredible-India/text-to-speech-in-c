@@ -4,6 +4,7 @@
 void gotoxy(int,int);
 void setcolor(int);
 void intro(void);
+void BasicInstructions(void);
 //global variable we will use it for the loop and all...
 int i,j;
 
@@ -168,10 +169,11 @@ void intro()
 
 void BasicInstructions()
 {
-    extern int i;
+
+    char ch;
     system("cls");
 
-    FILE *read__Data = fopen("./../basicInstruction/ins.txt","r");
+    FILE *read__Data = fopen("./Instruction/ins.txt","r");
 
     if(read__Data == NULL)
     {
@@ -190,7 +192,36 @@ void BasicInstructions()
          exit(0);
     }
 
+
+    gotoxy(10,3);
+    setcolor(7);
+    printf("Instructions\n");
+    printf("\n");
+
+    ch = fgetc(read__Data);
+
+    while(ch != EOF)
+    {
+        printf("%c",ch);
+        Sleep(2);
+
+          ch = fgetc(read__Data);
+
     fflush(stdin);
+
+
+    }
+
+    fclose(read__Data);
+
+
+
+    printf("\npress Any key to exit\n");
+
+         getch();
+
+        ExitFn();
+
 
 
 }
