@@ -5,6 +5,8 @@ void gotoxy(int,int);
 void setcolor(int);
 void intro(void);
 void BasicInstructions(void);
+void TodayDate(void);
+void  textToSpeech(void);
 //global variable we will use it for the loop and all...
 int i,j;
 
@@ -140,8 +142,10 @@ void intro()
       {
 
       case '1':
+          textToSpeech();
         break;
       case '2':
+          TodayDate();
         break;
       case '3':
         BasicInstructions();
@@ -224,4 +228,89 @@ void BasicInstructions()
 
 
 
+}
+
+
+void TodayDate()
+{
+#ifndef MAX_BUF
+#define MAX_BUF 200
+#endif
+
+
+
+    char path[MAX_BUF];
+
+  getcwd(path, MAX_BUF);
+
+  system("cls");
+
+  system(strcat(path,"\\python\\date.py")); //it return 0 on successful
+
+  setcolor(7);
+    printf("\npress Any key to exit\n");
+ getch();
+    ExitFn();
+
+
+
+
+}
+
+
+void textToSpeech()
+{
+#ifndef MAX_BUF
+#define MAX_BUF 200
+#endif
+
+    int check;
+
+    char* dirname = "mytext";
+
+
+    check = mkdir(dirname,0777);
+
+
+    FILE *write_Text = fopen("./mytext/mytext.txt","w");
+
+
+    char text[500];
+
+    char path[MAX_BUF];
+
+    system("cls");
+
+
+    gotoxy(10,4);
+
+    setcolor(9);
+
+   printf("Enter the text you (up to 250 words): ");
+
+
+    gotoxy(10,6);
+
+    setcolor(10);
+
+    fflush(stdin);
+
+    gets(text);
+
+
+   fputs(text,write_Text);
+
+   fclose(write_Text);
+
+   getcwd(path, MAX_BUF);
+
+    system(strcat(path,"\\python\\texttospeech.py")); //it return 0 on successful
+
+  setcolor(7);
+
+    printf("\npress Any key to exit\n");
+
+ getch();
+
+    ExitFn();
 }

@@ -22,7 +22,7 @@ void intro(void);
 
  int main()
  {
-     system("./python/date.py");
+
      intro();
 
  }
