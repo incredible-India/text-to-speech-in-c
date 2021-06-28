@@ -8,17 +8,24 @@
  #include<stdio.h>
  #include<conio.h>
  #include<string.h>
- #include<windows.h>
  #include<stdlib.h>
+ //checking the operating system
+ #ifdef _WIN32
+ #include<windows.h>
+ #endif
+
 
  //User define header file
- #include"./header Files/impFNS.h"
+ #include"./header_Files/impFNS.h"
 
  //function declaration
+void intro(void);
+ ///////////////////////////
 
  int main()
  {
-     ExitFn();
+     intro();
 
  }
 
+/************************The End`******************************/
