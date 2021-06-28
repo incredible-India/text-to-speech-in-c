@@ -81,13 +81,14 @@ void intro()
       gotoxy(40,12);
       setcolor(3);
 
-     /*  for(i=0;i< strlen(_ch);i++)
+      for(i=0;i< strlen(_ch);i++)
     {
 
         printf("%c",_ch[i]);
-        Sleep(100);
+        Sleep(35);
 
-   } */
+   }
+
  system("cls");
 
  gotoxy(10,2);
